@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iron Pulse Gym</title>
+
+<style>
+/* ===== GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #111;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 50px;
+  background: rgba(0,0,0,0.8);
+  z-index: 1000;
+}
+
+nav h1 {
+  color: #ff4d00;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ff4d00;
+}
+
+/* ===== HERO ===== */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+  url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b') center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 50px;
+}
+
+.hero span {
+  color: #ff4d00;
+}
+
+.btn {
+  padding: 10px 25px;
+  background: #ff4d00;
+  border: none;
+  color: white;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #ff4d00;
+}
+
+.btn:hover {
+  background: white;
+  color: #ff4d00;
+  box-shadow: 0 0 20px #ff4d00, 0 0 40px #ff4d00;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 80px 50px;
+  text-align: center;
+}
+
+section h2 {
+  color: #ff4d00;
+  margin-bottom: 20px;
+}
+
+/* ===== CARDS ===== */
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 250px;
+  height: 180px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.card h3, .card p {
+  position: relative;
+}
+
+/* ===== GALLERY ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+/* ===== BANNER ===== */
+.banner {
+  background: url('https://images.unsplash.com/photo-1549060279-7e168fcee0c2') center/cover;
+  padding: 100px 20px;
+}
+
+.banner h2 {
+  font-size: 40px;
+  color: #ff4d00;
+}
+
+/* ===== PRICING ===== */
+.price {
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+/* ===== TRAINERS ===== */
+.trainer img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ===== CONTACT ===== */
+.contact input, .contact textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: black;
+  padding: 20px;
+}
+
+/* ===== ANIMATION ===== */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 768px){
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <h1>Iron Pulse</h1>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#plans">Plans</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div>
+    <h2>Build Your <span>Dream Body</span></h2>
+    <p>Train Hard. Stay Strong.</p>
+    <button class="btn">Join Now</button>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section id="facilities" class="fade">
+  <h2>Facilities</h2>
+  <div class="cards">
+    <div class="card" style="background:url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61') center/cover;">
+      <h3>Equipment</h3>
+    </div>
+    <div class="card" style="background:url('https://images.unsplash.com/photo-1554284126-aa88f22d8b74') center/cover;">
+      <h3>Yoga</h3>
+    </div>
+    <div class="card" style="background:url('https://images.unsplash.com/photo-1599058917212-d750089bc07e') center/cover;">
+      <h3>Cardio</h3>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="fade">
+  <h2>Services</h2>
+  <div class="cards">
+    <div class="card"><p>Personal Training</p></div>
+    <div class="card"><p>Weight Loss</p></div>
+    <div class="card"><p>Muscle Gain</p></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="fade">
+  <h2>Workout Gallery</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e">
+    <img src="https://images.unsplash.com/photo-1581009137042-c552e485697a">
+    <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658">
+    <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155">
+  </div>
+</section>
+
+<!-- BANNER -->
+<section class="banner">
+  <h2>No Pain No Gain 💪</h2>
+  <p>Push Your Limits</p>
+</section>
+
+<!-- PLANS -->
+<section id="plans" class="fade">
+  <h2>Membership Plans</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Basic</h3>
+      <p class="price">₹999</p>
+    </div>
+    <div class="card">
+      <h3>Standard</h3>
+      <p class="price">₹1999</p>
+    </div>
+    <div class="card">
+      <h3>Premium</h3>
+      <p class="price">₹2999</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact fade">
+  <h2>Contact</h2>
+  <input type="text" placeholder="Name"><br>
+  <input type="email" placeholder="Email"><br>
+  <textarea placeholder="Message"></textarea><br>
+  <button class="btn">Send</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Iron Pulse Gym</p>
+</footer>
+
+<script>
+/* FADE EFFECT */
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  const trigger = window.innerHeight * 0.8;
+
+  faders.forEach(fade => {
+    const top = fade.getBoundingClientRect().top;
+    if(top < trigger){
+      fade.classList.add('show');
+    }
+  });
+});
+
+/* ACTIVE NAV */
+window.addEventListener("scroll", () => {
+  let sections = document.querySelectorAll("section");
+  let navLinks = document.querySelectorAll("nav ul li a");
+
+  sections.forEach(sec => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 100;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute("id");
+
+    if(top >= offset && top < offset + height){
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        document.querySelector("nav ul li a[href*=" + id + "]").classList.add("active");
+      });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
